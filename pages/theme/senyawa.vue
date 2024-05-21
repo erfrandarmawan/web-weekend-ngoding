@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full h-auto flex flex-col bg-primary">
+  <main class="w-full h-auto flex flex-col bg-primary" data-theme="senyawa">
     <!-- Landing Page Section -->
     <section id="section-landing-page" class="w-full h-screen flex items-center justify-center">
       <img src="https://ik.imagekit.io/b3amk7ihm/senyawa_logo.webp" class="w-40 md:w-60 xl:w-60"

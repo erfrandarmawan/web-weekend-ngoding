@@ -1,5 +1,5 @@
 <template>
-  <main class="w-full h-auto flex flex-col bg-white font-teachers">
+  <main class="w-full h-auto flex flex-col bg-white font-teachers" data-theme="tjendana">
     <!-- Landing Page Section -->
     <section id="section-landing-page" class="w-full h-screen flex items-center justify-center absolute top-0 z-10 bg-white">
       <img id="logo-landing-page"

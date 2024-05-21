@@ -24,8 +24,14 @@ export default {
   ],
   daisyui: {
     themes: [
+      "light",
       {
-        light: {
+        senyawa: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#01004C",
+          secondary: "#E56CCA"
+        },
+        tjendana: {
           ...require("daisyui/src/theming/themes")["light"],
           primary: "#B89339",
           secondary: "#86353D"
