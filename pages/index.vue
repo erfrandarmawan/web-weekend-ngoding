@@ -47,18 +47,18 @@
       { name: 'og:site_name', content: 'Weekend Ngoding' },
       { name: 'og:description', content: 'Learn to build website via source code' },
       { name: 'og:url', content: 'https://weekend-ngoding.develobe.id/' },
-      { name: 'og:image', content: 'TODO' },
-      { name: 'og:image:secure_url', content: 'TODO' },
-      { name: 'og:image:type', content: 'image/png' },
+      { name: 'og:image', content: 'https://ik.imagekit.io/b3amk7ihm/tr:w-300/1716347560340.webp' },
+      { name: 'og:image:secure_url', content: 'https://ik.imagekit.io/b3amk7ihm/tr:w-300/1716347560340.webp' },
+      { name: 'og:image:type', content: 'image/webp' },
       { name: 'og:image:width', content: '300' },
-      { name: 'og:image:height', content: '213' },
+      { name: 'og:image:height', content: '173' },
       { name: 'og:type', content: 'website' },
       { name: 'og:locale', content: 'en_US' },
 
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: 'Weekend Ngoding' },
       { name: 'twitter:description', content: 'Learn to build website via source code' },
-      { name: 'twitter:image', content: 'TODO' },
+      { name: 'twitter:image', content: 'https://ik.imagekit.io/b3amk7ihm/tr:w-300/1716347560340.webp' },
     ],
   })
 </script>
