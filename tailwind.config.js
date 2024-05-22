@@ -14,7 +14,9 @@ export default {
         cinzel: ['Cinzel'],
         anton: ['Anton'],
         poppins: ['Poppins'],
-        teachers: ['Teachers']
+        teachers: ['Teachers'],
+        gayathri: ['Gayathri'],
+        montaga: ['Montaga'],
       }
     },
   },
