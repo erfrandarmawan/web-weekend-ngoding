@@ -61,31 +61,31 @@
     <!-- ./Projects Section -->
 
     <!-- Contact Section -->
-    <section class="w-full h-screen flex flex-col items-center justify-center relative font-poppins">
+    <section id="section-contact" class="w-full h-screen flex flex-col items-center justify-center relative font-poppins">
       <div class="w-full flex items-center gap-2 md:gap-10 xl:gap-10">
-        <div class="w-5/12 md:w-1/2 xl:w-1/2 flex justify-end">
+        <div id="contact-image" class="w-5/12 md:w-1/2 xl:w-1/2 flex justify-end">
           <img id="img-contact" src="https://ik.imagekit.io/b3amk7ihm/1716347873206.webp" class="w-24 min-w-24 md:w-60 md:min-w-60 xl:w-60 xl:min-w-60 h-fit rounded-full"/>
         </div>
 
-        <div id="divider-contact" class="w-0.8 h-16 md:h-32 xl:h-32 bg-black"></div>
+        <div id="contact-divider" class="w-0.5 h-16 md:h-32 xl:h-32 bg-black"></div>
 
         <div class="flex flex-col text-black w-7/12 md:w-1/2 xl:w-1/2 gap-3">
           <div class="flex items-center gap-1 md:gap-2 xl:gap-2">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="contact-icon-instagram" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M24 32C26.1217 32 28.1566 31.1571 29.6569 29.6569C31.1571 28.1566 32 26.1217 32 24C32 21.8783 31.1571 19.8434 29.6569 18.3431C28.1566 16.8429 26.1217 16 24 16C21.8783 16 19.8434 16.8429 18.3431 18.3431C16.8429 19.8434 16 21.8783 16 24C16 26.1217 16.8429 28.1566 18.3431 29.6569C19.8434 31.1571 21.8783 32 24 32Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M6 32V16C6 13.3478 7.05357 10.8043 8.92893 8.92893C10.8043 7.05357 13.3478 6 16 6H32C34.6522 6 37.1957 7.05357 39.0711 8.92893C40.9464 10.8043 42 13.3478 42 16V32C42 34.6522 40.9464 37.1957 39.0711 39.0711C37.1957 40.9464 34.6522 42 32 42H16C13.3478 42 10.8043 40.9464 8.92893 39.0711C7.05357 37.1957 6 34.6522 6 32Z" stroke="black" stroke-width="1.5"/>
               <path d="M35 13.02L35.02 12.998" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
 
-            <a id="link-instagram-tjendana" href="https://instagram.com/erfrandarmawan" class="text-xs md:text-lg xl:text-xl link link-hover" target="_blank" rel="noreferrer noopener" aria-label="@erfrandarmawan">@erfrandarmawan</a>
+            <a id="contact-text-instagram" href="https://instagram.com/erfrandarmawan" class="text-xs md:text-lg xl:text-xl link link-hover text-slate-100" target="_blank" rel="noreferrer noopener" aria-label="@erfrandarmawan">X</a>
           </div>
 
           <div class="flex items-center gap-1 md:gap-2 xl:gap-2">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg id="contact-icon-tiktok" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M33.1998 11.64C31.8327 10.0792 31.0793 8.07486 31.0798 6H24.8998V30.8C24.8522 32.142 24.2856 33.4132 23.3194 34.3459C22.3531 35.2785 21.0627 35.7998 19.7198 35.8C16.8798 35.8 14.5198 33.48 14.5198 30.6C14.5198 27.16 17.8398 24.58 21.2598 25.64V19.32C14.3598 18.4 8.31982 23.76 8.31982 30.6C8.31982 37.26 13.8398 42 19.6998 42C25.9798 42 31.0798 36.9 31.0798 30.6V18.02C33.5858 19.8197 36.5946 20.7853 39.6798 20.78V14.6C39.6798 14.6 35.9198 14.78 33.1998 11.64Z" fill="black"/>
             </svg>
 
-            <a id="link-instagram-tjendana" href="https://tiktok.com/@erfrandarmawan" class="text-xs md:text-lg xl:text-xl link link-hover" target="_blank" rel="noreferrer noopener" aria-label="@erfrandarmawan">@erfrandarmawan</a>
+            <a id="contact-text-tiktok" href="https://tiktok.com/@erfrandarmawan" class="text-xs md:text-lg xl:text-xl link link-hover text-slate-100" target="_blank" rel="noreferrer noopener" aria-label="@erfrandarmawan"></a>
           </div>
         </div>
       </div>
@@ -278,6 +278,49 @@
             opacity: 0,
           });
       });
+
+      gsap.timeline()
+        .from("#contact-divider", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .from("#contact-image", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .from("#contact-icon-instagram", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .to("#contact-text-instagram", {
+          duration: 0.8,
+          ease: "none",
+          text: {
+            value: "@erfrandarmawan",
+            newClass: "text-black",
+          }
+        })
+        .from("#contact-icon-tiktok", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .to("#contact-text-tiktok", {
+          duration: 0.8,
+          ease: "none",
+          text: {
+            value: "@erfrandarmawan",
+            newClass: "text-black",
+          }
+        })
+        .from("#developer-info", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        });
     });
   }
 
