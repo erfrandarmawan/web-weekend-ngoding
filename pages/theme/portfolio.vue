@@ -37,12 +37,13 @@
     <!-- ./About Section -->
 
     <!-- Projects Section -->
-    <section class="w-full min-h-screen flex flex-col items-center justify-center p-10">
-      <h1 class="font-gayathri text-7xl font-bold">Projects</h1>
+    <section id="section-projects" class="w-full min-h-screen flex flex-col items-center justify-center p-10">
+      <h1 id="projects-text-title" class="font-gayathri text-7xl font-bold text-white">X</h1>
 
       <div class="grid grid-cols-3 mt-10 gap-10">
-        <a v-for="item in projects"
+        <a v-for="(item, index) in projects"
           :key="item"
+          :id="`project-item-${index}`"
           class="card w-96 bg-base-100 shadow-xl group no-underline"
           :href="item.link"
           target="_blank"
@@ -257,6 +258,26 @@
           duration: 0.8,
           opacity: 0,
         })
+
+      const projectTimeline = gsap.timeline();
+      projectTimeline
+        .to("#projects-text-title", {
+          duration: 0.8,
+          ease: "none",
+          text: {
+            value: "Projects",
+            newClass: "text-black",
+          }
+        });
+
+      projects.value.forEach((item, index) => {
+        projectTimeline
+          .from(`#project-item-${index}`, {
+            y: 50,
+            duration: 0.8,
+            opacity: 0,
+          });
+      });
     });
   }
 
