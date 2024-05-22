@@ -6,21 +6,14 @@
     </article>
 
     <div class="w-8/12 grid grid-cols-2 gap-5 mt-10">
-      <a class="card bg-base-100 shadow-xl no-underline gap-0 group" href="/theme/senyawa">
+      <a v-for="item in projects"
+        :key="item"
+        class="card bg-base-100 shadow-xl no-underline gap-0 group" :href="item.path">
         <figure class="bg-slate-200">
-          <img src="https://ik.imagekit.io/b3amk7ihm/1716298815580.webp" alt="Senyawa Plus" class="object-cover group-hover:scale-110 duration-300" />
+          <img :src="item.image" :alt="item.title" class="object-cover group-hover:scale-110 duration-300" />
         </figure>
         <div class="card-body p-5">
-          <span class="card-title group-hover:text-primary duration-300">#1 Senyawa Plus</span>
-        </div>
-      </a>
-
-      <a class="card bg-base-100 shadow-xl no-underline gap-0 group" href="/theme/tjendana">
-        <figure class="bg-slate-200">
-          <img src="https://ik.imagekit.io/b3amk7ihm/1716299244692.webp" alt="Tjendana Bistro" class="object-cover group-hover:scale-110 duration-300" />
-        </figure>
-        <div class="card-body p-5">
-          <span class="card-title group-hover:text-primary duration-300">#2 Tjendana Bistro</span>
+          <span class="card-title group-hover:text-primary duration-300">{{ item.title }}</span>
         </div>
       </a>
     </div>
@@ -61,4 +54,23 @@
       { name: 'twitter:image', content: 'https://ik.imagekit.io/b3amk7ihm/tr:w-300/1716347560340.webp' },
     ],
   })
+
+  // Variables
+  const projects = ref([
+    {
+      "path": "/theme/senyawa",
+      "image": "https://ik.imagekit.io/b3amk7ihm/1716298815580.webp",
+      "title": "#1 Senyawa Plus"
+    },
+    {
+      "path": "/theme/tjendana",
+      "image": "https://ik.imagekit.io/b3amk7ihm/1716299244692.webp",
+      "title": "#2 Tjendana Bistro"
+    },
+    {
+      "path": "/theme/portfolio",
+      "image": "https://ik.imagekit.io/b3amk7ihm/1716385079916.webp",
+      "title": "#3 Portfolio"
+    }
+  ]);
 </script>
