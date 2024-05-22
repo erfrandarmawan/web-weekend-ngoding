@@ -1,13 +1,14 @@
 <template>
-  <main class="w-full h-auto flex flex-col">
+  <main class="w-full h-auto flex flex-col bg-slate-100">
     <!-- Main Section -->
     <section class="w-full h-screen flex flex-col items-center justify-center">
-      <div class="w-[300px] h-[300px] rounded-full group overflow-hidden drop-shadow-xl">
+      <div id="main-image" class="w-[300px] h-[300px] rounded-full group overflow-hidden drop-shadow-xl ring-8 ring-white"
+        :class="isMounted ? 'opacity-100' : 'opacity-0'">
         <img src="https://ik.imagekit.io/b3amk7ihm/1716347873206.webp" class="w-full h-full object-cover group-hover:scale-110 duration-300 object-top" />
       </div>
 
-      <h1 class="font-gayathri text-7xl font-bold uppercase mt-20">Erfran Darmawan</h1>
-      <h3 class="font-gayathri text-5xl font-thin uppercase">Front End Developer</h3>
+      <h1 id="main-text-name" class="font-gayathri text-7xl font-bold uppercase mt-20 text-slate-100">X</h1>
+      <h3 id="main-text-role" class="font-gayathri text-5xl font-thin uppercase text-slate-100">X</h3>
     </section>
     <!-- ./Main Section -->
 
@@ -65,7 +66,7 @@
           <img id="img-contact" src="https://ik.imagekit.io/b3amk7ihm/1716347873206.webp" class="w-24 min-w-24 md:w-60 md:min-w-60 xl:w-60 xl:min-w-60 h-fit rounded-full"/>
         </div>
 
-        <div id="divider-contact" class="w-0.5 h-16 md:h-32 xl:h-32 bg-black"></div>
+        <div id="divider-contact" class="w-0.8 h-16 md:h-32 xl:h-32 bg-black"></div>
 
         <div class="flex flex-col text-black w-7/12 md:w-1/2 xl:w-1/2 gap-3">
           <div class="flex items-center gap-1 md:gap-2 xl:gap-2">
@@ -97,6 +98,11 @@
 </template>
 
 <script setup>
+  // Import library
+  import gsap from 'gsap';
+  import { TextPlugin } from 'gsap/TextPlugin';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
   // Heading and set body attributes
   useHead({
     title: 'Portfolio',
@@ -184,4 +190,56 @@
       "link": "https://djimbaran.develobe.id"
     }
   ]);
+
+  let ctx;
+  const isMounted = ref(false);
+
+  // Register GSAP plugin
+  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Functions
+  function animatePage(){
+    // Animate page
+    ctx = gsap.context((self) => {
+      gsap.timeline()
+        .from("#main-image", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .to("#main-text-name", {
+          duration: 0.8,
+          ease: "none",
+          text: {
+            value: "Erfran Darmawan",
+            newClass: "text-black",
+          }
+        })
+        .to("#main-text-role", {
+          duration: 0.8,
+          ease: "none",
+          text: {
+            value: "Front End Developer",
+            newClass: "text-black",
+          }
+        });
+    });
+  }
+
+  // Lifecycle callback
+  onMounted(() => {
+    // Set flag mounted
+    isMounted.value = true;
+
+    // Animate page
+    animatePage();
+  });
+
+  onUnmounted(() => {
+    // Revert to original state
+    if (ctx){
+      ctx.revert();
+    }
+  });
 </script>
