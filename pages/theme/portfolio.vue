@@ -13,22 +13,22 @@
     <!-- ./Main Section -->
 
     <!-- About Section -->
-    <section class="w-full h-screen flex flex-col items-center justify-center">
-      <h1 class="font-gayathri text-7xl font-bold">About Me</h1>
-      <h3 class="w-2/3 font-gayathri text-5xl font-thin text-start mt-16 leading-tight">Through 8+ years of my experience, I have been working for over 30+ projects. My tech stacks are Nuxt.js for the front end and Express.js for the back end</h3>
+    <section id="section-about" class="w-full h-screen flex flex-col items-center justify-center">
+      <h1 id="about-text-title" class="font-gayathri text-7xl font-bold text-slate-100">X</h1>
+      <h3 id="about-text-description" class="w-2/3 font-gayathri text-5xl font-thin text-start mt-16 leading-tight text-slate-100">Through 8+ years of my experience, I have been working for over 30+ projects. My tech stacks are Nuxt.js for the front end and Express.js for the back end|</h3>
       
       <div class="flex flex-row mt-16 font-montaga gap-20">
-        <div class="w-[200px] h-[200px] flex flex-col items-center justify-center ring-black ring-8 rounded-full">
+        <div id="about-skills-1" class="w-[200px] h-[200px] flex flex-col items-center justify-center ring-black ring-8 rounded-full">
           <span class="text-5xl">*****</span>
           <span class="text-3xl">Front End</span>
         </div>
 
-        <div class="w-[200px] h-[200px] flex flex-col items-center justify-center ring-black ring-8 rounded-full">
+        <div id="about-skills-2" class="w-[200px] h-[200px] flex flex-col items-center justify-center ring-black ring-8 rounded-full">
           <span class="text-5xl">*****</span>
           <span class="text-3xl">Back End</span>
         </div>
 
-        <div class="w-[200px] h-[200px] flex flex-col items-center justify-center ring-black ring-8 rounded-full">
+        <div id="about-skills-3" class="w-[200px] h-[200px] flex flex-col items-center justify-center ring-black ring-8 rounded-full">
           <span class="text-5xl">*****</span>
           <span class="text-3xl">UI Design</span>
         </div>
@@ -224,6 +224,39 @@
             newClass: "text-black",
           }
         });
+
+      gsap.timeline()
+        .to("#about-text-title", {
+          duration: 0.8,
+          ease: "none",
+          text: {
+            value: "About Me",
+            newClass: "text-black",
+          }
+        })
+        .to("#about-text-description", {
+          duration: 5,
+          ease: "none",
+          text: {
+            value: "Through 8+ years of my experience, I have been working for over 30+ projects. My tech stacks are Nuxt.js for the front end and Express.js for the back end",
+            newClass: "text-black",
+          }
+        })
+        .from("#about-skills-1", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .from("#about-skills-2", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
+        .from("#about-skills-3", {
+          y: 50,
+          duration: 0.8,
+          opacity: 0,
+        })
     });
   }
 
