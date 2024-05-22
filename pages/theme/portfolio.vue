@@ -38,7 +38,7 @@
 
     <!-- Projects Section -->
     <section id="section-projects" class="w-full min-h-screen flex flex-col items-center justify-center p-10">
-      <h1 id="projects-text-title" class="font-gayathri text-7xl font-bold text-white">X</h1>
+      <h1 id="projects-text-title" class="font-gayathri text-7xl font-bold text-slate-100">X</h1>
 
       <div class="grid grid-cols-3 mt-10 gap-10">
         <a v-for="(item, index) in projects"
@@ -64,7 +64,7 @@
     <section id="section-contact" class="w-full h-screen flex flex-col items-center justify-center relative font-poppins">
       <div class="w-full flex items-center gap-2 md:gap-10 xl:gap-10">
         <div id="contact-image" class="w-5/12 md:w-1/2 xl:w-1/2 flex justify-end">
-          <img id="img-contact" src="https://ik.imagekit.io/b3amk7ihm/1716347873206.webp" class="w-24 min-w-24 md:w-60 md:min-w-60 xl:w-60 xl:min-w-60 h-fit rounded-full"/>
+          <img id="img-contact" src="https://ik.imagekit.io/b3amk7ihm/1716347873206.webp" class="w-24 min-w-24 md:w-60 md:min-w-60 xl:w-60 xl:min-w-60 h-fit rounded-full drop-shadow-xl"/>
         </div>
 
         <div id="contact-divider" class="w-0.5 h-16 md:h-32 xl:h-32 bg-black"></div>
@@ -157,12 +157,12 @@
     },
     {
       "image": "https://ik.imagekit.io/b3amk7ihm/tr:w-1024/1716351202566.webp",
-      "title": "Book : Adulting - Portfolio",
+      "title": "Book : Adulting - 3D Website",
       "link": "https://adulting.shantyfputri.com/"
     },
     {
       "image": "https://ik.imagekit.io/b3amk7ihm/tr:w-1024/1716351270957.webp",
-      "title": "Book : Melihat Lebih Dekat",
+      "title": "Book : Melihat Lebih Dekat - 3D Website",
       "link": "https://melihat-lebih-dekat.shantyfputri.com/"
     },
     {
@@ -226,7 +226,12 @@
           }
         });
 
-      gsap.timeline()
+      gsap.timeline({
+          scrollTrigger: {
+            trigger: "#section-about",
+            start: 'top 50%'
+          }
+        })
         .to("#about-text-title", {
           duration: 0.8,
           ease: "none",
@@ -259,7 +264,13 @@
           opacity: 0,
         })
 
-      const projectTimeline = gsap.timeline();
+      const projectTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#section-projects",
+          start: 'top 50%'
+        }
+      });
+
       projectTimeline
         .to("#projects-text-title", {
           duration: 0.8,
@@ -279,7 +290,12 @@
           });
       });
 
-      gsap.timeline()
+      gsap.timeline({
+          scrollTrigger: {
+            trigger: "#section-contact",
+            start: 'top top',
+          }
+        })
         .from("#contact-divider", {
           y: 50,
           duration: 0.8,
